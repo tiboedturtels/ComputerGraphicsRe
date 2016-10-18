@@ -158,6 +158,86 @@ void putPixel(int x, int y)
 void drawLine(int x1, int y1, int x2, int y2)
 {
 	// Task 1
+	int dx = x2 - x1;
+	int dy = y2 - y1;
+
+	if (abs(dx) > abs(dy))
+	{
+		//Make sure we start from the correct point
+		if (x2 < x1)
+		{
+			int temp = x1;
+			x1 = x2;
+			x2 = temp;
+
+			temp = y1;
+			y1 = y2;
+			y2 = temp;
+		}
+
+		int slopeFactor = 1;
+		if (y2 < y1)
+			slopeFactor = -1;
+
+		int D = 2 * dy - dx * slopeFactor;
+		int inc0 = 2 * dy;
+		int inc1 = 2 * (dy - dx * slopeFactor);
+
+		putPixel(x1, y1);
+		while (x1 < x2)
+		{
+			if ((D <= 0 && slopeFactor == 1) || (D >= 0 && slopeFactor == -1))
+			{
+				D += inc0;
+			}
+			else
+			{
+				D += inc1;
+				y1 += slopeFactor;
+			}
+			x1++;
+			putPixel(x1, y1);
+		}
+	}
+	
+	else
+	{
+		//Make sure we start from the correct point
+		if (y2 < y1)
+		{
+			int temp = x1;
+			x1 = x2;
+			x2 = temp;
+
+			temp = y1;
+			y1 = y2;
+			y2 = temp;
+		}
+
+		int slopeFactor = 1;
+		if (x2 < x1)
+			slopeFactor = -1;
+
+		int D = 2 * dx - dy * slopeFactor;
+		int inc0 = 2 * dx;
+		int inc1 = 2 * (dx - dy * slopeFactor);
+
+		putPixel(x1, y1);
+		while (y1 < y2)
+		{
+			if ((D <= 0 && slopeFactor == 1) || (D >= 0 && slopeFactor == -1))
+			{
+				D += inc0;
+			}
+			else
+			{
+				D += inc1;
+				x1 += slopeFactor;
+			}
+			y1++;
+			putPixel(x1, y1);
+		}
+	}
 }
 
 void drawCircle(int x0, int y0, int R)
