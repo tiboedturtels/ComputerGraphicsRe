@@ -240,9 +240,40 @@ void drawLine(int x1, int y1, int x2, int y2)
 	}
 }
 
+void CirclePoints(int x, int y, int centerx, int centery, int radius)
+{
+	putPixel(centerx + x, centery + y);
+	putPixel(centerx + x, centery - y);
+	putPixel(centerx - x, centery + y);
+	putPixel(centerx - x, centery - y);
+	putPixel(centerx + y, centery + x);
+	putPixel(centerx + y, centery - x);
+	putPixel(centerx - y, centery + x);
+	putPixel(centerx - y, centery - x);
+}
+
 void drawCircle(int x0, int y0, int R)
 {
 	// Task 2
+	int x1 = 0;
+	int y1 = R;
+	int D = 1 - R;
+
+	CirclePoints(x1, y1, x0, y0, R);
+	while (y1 > x1)
+	{
+		if (D < 0)
+		{
+			D += 2 * x1 + 3;
+		}
+		else
+		{
+			D += 2 * (x1 - y1) + 5;
+			y1--;
+		}
+		x1++;
+		CirclePoints(x1, y1, x0, y0, R);
+	}
 }
 
 void drawImage()
