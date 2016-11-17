@@ -478,6 +478,17 @@ void computeJointTransformations(
 	std::vector<Matrix4f>& p_global)
 {
 	// TASK 1 comes here
+	for (int i = 0; i < p_numJoints; i++)
+	{
+		if (p_jointParent[i] == -1)
+		{
+			p_global[i] = p_offset[i] * p_local[i];
+		}
+		else
+		{
+			p_global[i] = p_global[p_jointParent[i]] * p_offset[i] * p_local[i];
+		}
+	}
 }
 
 void skinning(
@@ -488,12 +499,27 @@ void skinning(
 		const std::vector<std::vector<float>>& p_weights,
 		std::vector<Vector3f>& p_deformedVertices)
 {
+	//Set initially to 0
+	for (int i = 0; i < p_deformedVertices.size(); i++)
+	{
+		g_deformedVertices[i] = Vector3f(0, 0, 0);
+	}
+
+	for (int j = 0; j < p_numJoints; j++)
+	{
+		for (int v = 0; v < p_vertices.size(); v++)
+		{
+			g_deformedVertices[v] += fromHomog(p_weights[j][v] * p_jointTrans[j] * p_jointTransRestInv[j] * toHomog(p_vertices[v]));
+		}
+	}
 	// The following code simply copies rest pose vertex positions
 	// You will need to replace this by your solution of TASK 2
+	/*
 	for (unsigned int v = 0; v < p_vertices.size(); v++)
 	{
 		p_deformedVertices[v] = p_vertices[v];
 	}
+	*/
 }
 
 void initRestPose()
@@ -520,8 +546,8 @@ void animate()
 
 int main(int argc, char *argv[]) 
 {
-	loadData("ogre"); // replace this with the following line to load the Ogre instead
-	//loadData("ogre");
+	//loadData("capsule"); // replace this with the following line to load the Ogre instead
+	loadData("ogre");
 	
 	initRestPose();
 

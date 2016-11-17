@@ -1,13 +1,15 @@
-﻿Build started 11/13/2016 2:50:24 PM.
-     1>Project "C:\Users\Cam\Desktop\ClassCode\Computer Graphics Stuff\Computer Graphics\HW4\004-Skinning.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11/16/2016 2:22:13 PM.
+     1>Project "C:\Users\Tiboed\Desktop\CLass Code\ComputerGraphics\Computer-Graphics\ComputerGraphicsRe\HW4\004-Skinning.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Iext\Eigen /Iext\stb /Iext\glew\include /Iext\glfw\include /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /D _MBCS /D _CRT_SECURE_NO_WARNINGS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
          main.cpp
+     1>main.cpp(508): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Cam\Desktop\ClassCode\Computer Graphics Stuff\Computer Graphics\HW4\x64\Debug\004-Skinning.exe" /INCREMENTAL /NOLOGO /LIBPATH:ext\glfw\lib\release /LIBPATH:ext\glew\lib glew32.lib glfw3.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Cam\Desktop\ClassCode\Computer Graphics Stuff\Computer Graphics\HW4\x64\Debug\004-Skinning.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Cam\Desktop\ClassCode\Computer Graphics Stuff\Computer Graphics\HW4\x64\Debug\004-Skinning.lib" /MACHINE:X64 x64\Debug\main.obj
-         004-Skinning.vcxproj -> C:\Users\Cam\Desktop\ClassCode\Computer Graphics Stuff\Computer Graphics\HW4\x64\Debug\004-Skinning.exe
-     1>Done Building Project "C:\Users\Cam\Desktop\ClassCode\Computer Graphics Stuff\Computer Graphics\HW4\004-Skinning.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tiboed\Desktop\CLass Code\ComputerGraphics\Computer-Graphics\ComputerGraphicsRe\HW4\x64\Debug\004-Skinning.exe" /INCREMENTAL /NOLOGO /LIBPATH:ext\glfw\lib\release /LIBPATH:ext\glew\lib glew32.lib glfw3.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Tiboed\Desktop\CLass Code\ComputerGraphics\Computer-Graphics\ComputerGraphicsRe\HW4\x64\Debug\004-Skinning.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Tiboed\Desktop\CLass Code\ComputerGraphics\Computer-Graphics\ComputerGraphicsRe\HW4\x64\Debug\004-Skinning.lib" /MACHINE:X64 x64\Debug\main.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         004-Skinning.vcxproj -> C:\Users\Tiboed\Desktop\CLass Code\ComputerGraphics\Computer-Graphics\ComputerGraphicsRe\HW4\x64\Debug\004-Skinning.exe
+     1>Done Building Project "C:\Users\Tiboed\Desktop\CLass Code\ComputerGraphics\Computer-Graphics\ComputerGraphicsRe\HW4\004-Skinning.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.44
+Time Elapsed 00:00:02.14
